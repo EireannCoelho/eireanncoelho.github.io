@@ -1,0 +1,51 @@
+'''
+CS 210 Winter 2024
+Author: Eireann Coelho
+Credits: 
+'''
+
+"Inputs a sorted list of integers and returns the number of elements smaller than item."
+def count_smaller(lst: list, item: int) -> int:
+    if not lst:
+        return 0
+    
+    mid = len(lst) // 2
+    if lst[mid] < item:
+        return mid + 1 + count_smaller(lst[mid + 1:], item)
+    else:
+        return count_smaller(lst[:mid], item)
+
+"Checks whether the given string is a palindrome"    
+def is_palindrome(s: str) -> bool:
+    if s == '':
+        return True
+    elif s[0] == s[-1]:
+        return is_palindrome(s[1:-1])
+    else:
+        return False
+
+"Computes the average length of a list of words"
+def avg_word_length(lst: list, length: int = 0, count: int = 0) -> float:
+    def avg_word_length_helper(lst, length, count):
+        
+        if not lst:
+            return round(length / count, 1) if count > 0 else 0.0
+
+        current_word = lst[0]
+
+        length += len(current_word)
+        count += 1
+
+        return avg_word_length_helper(lst[1:], length, count)
+
+    return avg_word_length_helper(lst, length, count)
+
+"Flatten a list"
+def flatten(lst: list) -> list:
+    result = []
+    for element in lst:
+        if isinstance(element, list):
+            result += flatten(element)
+        else:
+            result.append(element)
+    return result
