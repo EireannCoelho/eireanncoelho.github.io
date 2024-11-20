@@ -1,0 +1,74 @@
+import turtle
+from state import Stack, State
+
+class LSystem:
+    def __init__(self, axiom, rules, angle, step, n=3, starting_pos=(-200, 0), starting_angle=0, color='blue'):
+        self.axiom = axiom
+        self.rules = rules
+        self.angle = angle
+        self.step = step
+        self.n = n
+        self.starting_pos = starting_pos
+        self.starting_angle = starting_angle
+        self.color = color
+        self.commands = axiom
+
+    def iterate(self):
+        current_string = self.axiom
+        for _ in range(self.n):
+            new_string = ""
+            for char in current_string:
+                new_string += self.rules.get(char, char)
+            current_string = new_string
+        self.commands = current_string
+
+    def draw(self):
+        t = turtle.Turtle()
+        t.speed(0)
+        t.color(self.color)
+        t.penup()
+        t.goto(*self.starting_pos)
+        t.setheading(self.starting_angle)
+        t.pendown()
+
+        stack = Stack()
+
+        for command in self.commands:
+            if command == 'F':
+                t.forward(self.step)
+            elif command == 'f':
+                t.penup()
+                t.forward(self.step)
+                t.pendown()
+            elif command == '+':
+                t.left(self.angle)
+            elif command == '-':
+                t.right(self.angle)
+            elif command == '[':
+                stack.push(State(t.xcor(), t.ycor(), t.heading()))
+            elif command == ']':
+                state = stack.pop()
+                t.penup()
+                t.goto(state.x, state.y)
+                t.setheading(state.angle)
+                t.pendown()
+
+        turtle.done()
+
+    def plot(self):
+        self.iterate()
+        self.draw()
+
+
+if __name__ == "__main__":
+    ls1 = LSystem(
+        axiom="F-F-F-F",
+        rules={"F": "F-F+F+FF-F-F+F"},
+        angle=90,
+        step=5,
+        n=3,
+        starting_pos=(0, 0),
+        starting_angle=0,
+        color="blue"
+    )
+    ls1.plot()
