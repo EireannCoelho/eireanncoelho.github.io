@@ -25,6 +25,6 @@ Work with the SOMD Communications Team on a variety of projects including event 
 
 ### Projects 
  C programming class 
-   2A - find the odd, composite numbers between 10 and 400 
+   [2A]( - find the odd, composite numbers between 10 and 400 
    
    
