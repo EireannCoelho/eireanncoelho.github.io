@@ -1,0 +1,75 @@
+import turtle
+import random
+from state import Stack, State
+
+class LSystem:
+    def __init__(self, axiom, rules, angle,  step, n=3, starting_pos=(-200,0), starting_angle=0, color='blue'):
+        self.axiom = axiom
+        self.rules = rules
+        self.angle = angle
+        self.n = n
+        self.starting_pos = starting_pos
+        self.starting_angle = starting_angle
+        self.color = color
+        self.commands = axiom
+        random.seed(42)
+
+    def iterate(self):
+        current_string = self.axiom
+        for _ in range(self.n):
+            new_string = ""
+            for char in current_string:
+                if char in self.rules:
+                    new_string += self.choose_rule(self.rules[char])
+                else:
+                    new_string += char
+            current_string = new_string
+        self.commands = current_string
+
+    def choose_rule(self, rules):
+        total_prob = sum(prob for prob, _ in rules)
+        r = random.uniform(0, total_prob)
+        upto = 0
+        for prob, substitution in rules:
+            if upto + prob >= r:
+                return substitution
+            upto += prob
+        return rules[-1][1]
+    
+    def draw(self):
+        t = turtle.Turtle()
+        t.speed(0)
+        t.color(self.color)
+        t.penup()
+        t.goto(*self.starting_pos)
+        t.setheading(self.starting_angle)
+        t.pendown()
+
+        stack = Stack()
+
+        for command in self.commands:
+            if command == 'F':
+                t.forward(self.step)
+            elif command == 'f':
+                t.penup()
+                t.forward(self.step)
+                t.pendown()
+            elif command == '+':
+                t.left(self.angle)
+            elif command == '-':
+                t.right(self.angle)
+            elif command == '[':
+                stack.push(State(t.xcor(), t.ycor(), t.heading()))
+            elif command == ']':
+                state = stack.pop()
+                t.penup()
+                t.goto(state.x, state.y)
+                t.setheading(state.angle)
+                t.pendown()
+
+        turtle.done()
+
+    def plot(self):
+        self.iterate()
+        self.draw()
+
