@@ -1,0 +1,81 @@
+"""
+class designed to represent an image as a Quad Tree.
+"""
+from binary_matrix import *
+from math import inf as infinity
+
+class QuadTree:
+
+    def __init__(self) -> None:
+        self.depth = 0
+        self.mean = 0
+        self.size = (0,0)
+        self.nw = None
+        self.ne = None
+        self.se = None
+        self.sw = None
+
+    def insert(self, bin_mat, depth = 0):
+        self.depth = depth
+        self.mean = matrix_mean(bin_mat)
+        self.size = (len(bin_mat), len(bin_mat[0]))
+
+        if same_bits(bin_mat):
+            return
+        
+        m_4 = split_4(bin_mat)
+
+        self.nw = QuadTree()
+        self.ne = QuadTree()
+        self.se = QuadTree()
+        self.sw = QuadTree()
+
+        self.nw.insert(m_4[0], depth + 1)
+        self.ne.insert(m_4[1], depth + 1)
+        self.se.insert(m_4[2], depth + 1)
+        self.sw.insert(m_4[3], depth  + 1)
+
+
+    def reconstruct_image(self, depth):
+        if self.nw is None or self.depth == depth:
+            return [[self.mean] * self.size[1] for _ in range(self.size[0])]
+        
+        nw_matrix = self.nw.reconstruct_image(depth)
+        ne_matrix = self.ne.reconstruct_image(depth)
+        sw_matrix = self.sw.reconstruct_image(depth)
+        se_matrix = self.se.reconstruct_image(depth)
+
+        result = []
+        for i in range(self.size[0] // 2):
+            result.append(nw_matrix[i] + ne_matrix[i])
+        for i in range(self.size[0] // 2):
+            result.append(sw_matrix[i] + se_matrix[i])
+        
+        return result
+
+    def __str__(self, prefix=""):
+        node_str = prefix + "+" * self.depth + f"Depth: {self.depth}, Mean: {self.mean:.2f}, Size: {self.size}\n"
+
+        if self.nw:
+            node_str += self.nw.__str__(prefix + "  ")
+        if self.ne:
+            node_str += self.ne.__str__(prefix + "  ")
+        if self.se:
+            node_str += self.se.__str__(prefix + "  ")
+        if self.sw:
+            node_str += self.sw.__str__(prefix + "  ")
+
+        return node_str
+
+if __name__ == "__main__":
+    binary_file = 'images/fisherman.txt'
+    matrix = read_bin_matrix(binary_file)
+    q_t = QuadTree()
+    q_t.insert(matrix)
+    # print(q_t)
+
+    depth = infinity # why infinity?
+    rec_mat = q_t.reconstruct_image(depth) 
+    plot_bin_matrix(rec_mat)
+
+    
