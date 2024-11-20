@@ -1,0 +1,41 @@
+'''
+CS 210 Winter 2024
+Author: Eireann Coelho
+Credits: 
+
+Draw a duck in Turtle Graphics
+'''
+
+import turtle
+
+t = turtle.Turtle()
+
+def duck(): 
+    t.circle(50)     #head
+    t.right(180)     #turn to draw opposite direction
+    t.circle(80,180)  #chest/front side of duck
+    t.circle(180,90)  # back of duck
+    t.left(96.5)       #turn to draw back to beginning of duck
+    t.forward(180)     #connect to beginign of duck
+    t.up()             #lift up pen
+    t.goto(-80,50)     #go to point of beak
+    t.right(160)       #turn pen back to head
+    t.down()           #put pen down
+    t.forward(36)      # draw beak back to head
+    t.up()             # lift up pen
+    t.goto(-80,50)     # go back to beginning of beak
+    t.right(45)        #turn pen to other side of beak
+    t.down()           # put pen down
+    t.forward(35)      # connect bottom of beak to the head 
+    t.up()             # lift up pen
+    t.goto(-25,65)     # move pen to the inside of the head
+    t.down()           # put pen down
+    t.circle(5)        # draw a circle for the eye
+    t.up()             #lift pen up
+    t.goto(0,-130)     # got to the middle of the ducks body
+    t.down()           # put pen down
+    t.circle(60,90)    #draw the first part of the wing (longer, less curved part of a circle)
+    t.circle(60/2,90)  # draw the second part of teh wing (shorter,, more curved end of wing)
+
+
+duck()
