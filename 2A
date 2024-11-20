@@ -1,0 +1,24 @@
+//For this assignment we were tasked to write a C program 
+//that finds the odd,composite numbers between 10 and 400. 
+
+#include <stdio.h>
+
+int main () {
+
+for (int num = 11; num <400; num += 2){
+	int odd = 0;
+
+	for (int i =2; i * i <= num; i++){
+		if (num % i ==0){
+			odd = 1;
+			break;
+		}
+	}
+
+	if (odd) {
+		printf("%d is a composite number.\n", num);
+	}
+	
+	}
+	return 0;
+}
