@@ -1,0 +1,67 @@
+'''
+CS 210 Winter 2024
+Author: Eireann Coelho
+Credits: 
+
+Use strings and lists to evaluate arithmetic expressions given in postfix notation.
+'''
+
+def is_operand(operand: str)-> bool:
+    #convert operand to an integer
+    try:
+        int(operand)
+        return True
+    except ValueError:
+        return False
+    
+def is_operator(operator: str)-> bool:
+    # check if operator is one of designated operators
+    return operator in {'+', '-', '*', '/'}
+
+def apply_operator(op: str, oper_1: float, oper_2: float)-> float:
+    if op == '+':
+        return oper_1 + oper_2
+    elif op == '-':
+        return oper_1 - oper_2
+    elif op == '*':
+        return oper_1 * oper_2
+    elif op == '/':
+        if oper_2 != 0:
+            return oper_1 / oper_2
+        else:
+            print("Division by zero is not allowed")
+
+def eval_postfix(expr_str: str)-> float:
+    stack = []
+    characters = expr_str.split()
+
+    for character in characters:
+        if is_operand(character):
+            stack.append(float(character))
+        elif is_operator(character):
+            if len(stack) < 2:
+                print("Invalid postifx expression.")
+                return "error on postfix expression"
+            oper_2 = stack.pop()
+            oper_1 = stack.pop()
+            try: 
+                result = apply_operator(character, oper_1, oper_2)
+            except ValueError as e:
+                print(f"Error: {e}")
+                return "error on postfix expression"
+            stack.append(result)
+        else:
+            print("Invalid character in postfix expression")
+    
+    if len(stack) == 1:
+        return stack[0]
+    elif len(stack) > 1:
+        print("Invalid postfix expression (extra opperands)")
+        return "error on postfix expression"
+    else:
+        print("invalid postfix expression (empty stack)")
+        return "error on postfix expression"
+    
+expr = "5 3 + 4 * 2 /"
+result = eval_postfix(expr)
+print(f"Result of postfix expression'{expr}': {result}")
