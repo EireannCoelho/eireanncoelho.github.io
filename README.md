@@ -27,9 +27,13 @@ Work with the SOMD Communications Team on a variety of projects including event 
  C programming class 
  
    [2A](/2A) - Find the odd, composite numbers between 10 and 400                          
-   [2B](/2B) - Sorts an array of 100 numbers
-   [2D](/2D) - Outputs the result of two numbers and a math operation
-   [2F](/2F) - Reverse the single line input
+   [2B](/2B) - Sorts an array of 100 numbers                                               
+   [2D](/2D) - Outputs the result of two numbers and a math operation                      
+   [2F](/2F) - Reverse the single line input                                               
    [2I](/2I) - Determines the amount of time necessary to allocate and initiaialzie the memory for an array of integers.
+
+  Python Programming class
+
+  
    
    
