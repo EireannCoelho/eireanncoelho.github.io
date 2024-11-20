@@ -32,11 +32,15 @@ Work with the SOMD Communications Team on a variety of projects including event 
    [2F](/2F) - Reverse the single line input                                               
    [2I](/2I) - Determines the amount of time necessary to allocate and initiaialzie the memory for an array of integers.
 
- Python Programming class
+ Python Programming class                                  
+ 
    [Project 1](/210/Project-1) - Draw a duck using Turtle Graphics                                                                            
    [Project 5](/210/Project-5) - Use strings and lists to evaluate arithmetic expressions given in postfix notation.                          
-   [Project 8](/210/Proect-8) - Implement several functions that perform computations on strings or collections usign recursion.              
-   
+   [Project 8](/210/Project-8) - Implement several functions that perform computations on strings or collections using recursion.              
+   [Project 4](/211/Project-4) - Build two python classesto organize and compare different appointment schedules            
+   [Project 6](/211/Project-6) - Implement a python class to represent a quad tree. Find a library of functions to transform images into binary text files, read from them, and plot images.                                                   
+   [Project 9](/211/Project-9) - Work with pyton classes to draw L-system images in Turtle graphics                         
+   [Project 8](/211/Project-8) - Simulating a simple CPU, the"Duck Machine," by implementing its format and processing logic. Use classes to decode instructions, ahndle arithmetic and logic operations, adn integrate with memory to execute programs. 
   
    
    
