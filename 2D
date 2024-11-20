@@ -1,0 +1,141 @@
+//For this assignment we were told to write a C program that takes
+//three command line arguments. the first is a number, the second 
+//is a mathematical operation and the third is a number. the program 
+//should output the result of applying the mathematical operation 
+//to the two numbers. 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef enum
+{
+   ADD,
+   MULT,
+   SUBTRACT,
+   DIV,
+   UNSUPPORTED
+} MathOperation;
+
+void IssueBadNumberError()
+{
+    printf("The string does not represent a floating point number.\n");
+    exit(EXIT_FAILURE);
+}
+
+void IssueBadOperationError()
+{
+    printf("The string does not represent a valid operation.\n");
+    exit(EXIT_FAILURE);
+}
+
+MathOperation GetOperation(char *op)
+{
+    if (op[0] == '+')
+        return ADD;
+    else if (op[0] == '-')
+        return SUBTRACT;
+    else if (op[0] == 'x')
+        return MULT;
+    else if (op[0] == '/')
+        return DIV;
+
+    IssueBadOperationError();
+    return UNSUPPORTED; // This line is never reached, but it's good practice.
+}
+
+double StringToDouble(char *str)
+{
+    double result = 0.0; // Use = instead of ==
+    int is_negative = 0; // Use = instead of ==
+    int i = 0;
+
+    if (str[0] == '-')
+    {
+        is_negative = 1;
+        i++;
+    }
+
+    // Check for valid characters in the integer part
+    while (str[i] != '\0' && str[i] != '.')
+    {
+        if (str[i] < '0' || str[i] > '9') // Invalid character check
+            IssueBadNumberError();
+
+        result = result * 10 + (str[i] - '0');
+        i++;
+    }
+
+    if (str[i] == '.')
+    {
+        i++;
+        double decimal_place = 0.1;
+        while (str[i] != '\0')
+        {
+            if (str[i] < '0' || str[i] > '9') // Invalid character check
+                IssueBadNumberError();
+
+            result += (str[i] - '0') * decimal_place;
+            decimal_place *= 0.1;
+            i++;
+        }
+    }
+
+    if (is_negative)
+    {
+        result = -result;
+    }
+
+    // Debugging output
+    printf("Parsed value: %f\n", result);
+
+    return result; 
+}
+
+int main(int argc, char *argv[])
+{
+    if (argc != 4) // Ensure exactly 3 arguments are passed
+    {
+        printf("Usage: ./proj2D <number> <operation> <number>\n");
+        return EXIT_FAILURE;
+    }
+
+    double v = StringToDouble(argv[1]);
+    MathOperation op = GetOperation(argv[2]);
+    double v2 = StringToDouble(argv[3]);
+    
+    // Debugging output
+    printf("First number: %f\n", v);
+    printf("Operation: %d\n", op);
+    printf("Second number: %f\n", v2);
+
+    double result = 0.0;
+
+    switch (op)
+    {
+        case ADD:
+            result = v + v2;
+            break;
+        case SUBTRACT:
+            result = v - v2;
+            break;
+        case MULT:
+            result = v * v2;
+            break;
+        case DIV:
+            if (v2 == 0) // Handle division by zero
+            {
+                printf("Error: Division by zero.\n");
+                return EXIT_FAILURE;
+            }
+            result = v / v2;
+            break;
+        default:
+            IssueBadOperationError();
+            break; // This line is never reached, but it's good practice.
+    }
+
+    printf("Result: %f\n", result); // Print the result before casting
+    printf("%d\n", (int)result); // Casting to int for output
+
+    return 0; // Return 0 for successful execution
+}
