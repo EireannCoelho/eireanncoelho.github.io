@@ -1,0 +1,70 @@
+//For this assignment I was tasked with writing a C program that determines
+//the amount of time necessary to allocate and initialize memory for an 
+//an array of integers, sorts the array, and deallocated the memory. Then
+//we replaced the sorting algorithm with the C standard library implementation
+//of quick sort. 
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/time.h>
+
+int *AllocateArray(int N) {
+    int *array = (int *)malloc(N * sizeof(int));
+    if (array == NULL) {
+        perror("Failed to allocate memory");
+        exit(EXIT_FAILURE);
+    }
+    for (int i = 0; i < N; i++) {
+        array[i] = rand();
+    }
+    return array;
+}
+
+int compare(const void *a, const void *b) {
+    return (*(int *)a - *(int *)b);
+}
+
+void SortArray(int *A, int N) {
+    qsort(A, N, sizeof(int), compare);
+}
+
+void DeallocateArray(int *A) {
+    free(A);
+}
+
+int main() {
+    int sizes[8] = {1000, 2000, 4000, 8000, 16000, 32000, 64000, 128000};
+
+    printf("Array Size\tAlloc Time (ms)\tSort Time (ms)\tDealloc Time (ms)\n");
+
+    for (int i = 0; i < 8; i++) {
+        struct timeval startTime, endTime;
+        double alloc_time = 0., sort_time = 0., dealloc_time = 0.;
+
+        // Measure allocation time
+        gettimeofday(&startTime, NULL);
+        int *array = AllocateArray(sizes[i]);
+        gettimeofday(&endTime, NULL);
+        alloc_time = (endTime.tv_sec - startTime.tv_sec) * 1000.0;
+        alloc_time += (endTime.tv_usec - startTime.tv_usec) / 1000.0;
+
+        // Measure sorting time
+        gettimeofday(&startTime, NULL);
+        SortArray(array, sizes[i]);
+        gettimeofday(&endTime, NULL);
+        sort_time = (endTime.tv_sec - startTime.tv_sec) * 1000.0;
+        sort_time += (endTime.tv_usec - startTime.tv_usec) / 1000.0;
+
+        // Measure deallocation time
+        gettimeofday(&startTime, NULL);
+        DeallocateArray(array);
+        gettimeofday(&endTime, NULL);
+        dealloc_time = (endTime.tv_sec - startTime.tv_sec) * 1000.0;
+        dealloc_time += (endTime.tv_usec - startTime.tv_usec) / 1000.0;
+
+        // Print results for this size
+        printf("%d\t\t%.2f\t\t%.2f\t\t%.2f\n", sizes[i], alloc_time, sort_time, dealloc_time);
+    }
+
+    return 0;
+}
