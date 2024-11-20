@@ -34,7 +34,9 @@ Work with the SOMD Communications Team on a variety of projects including event 
 
  Python Programming class
    [Project 1](/210/Project-1) - Draw a duck using Turtle Graphics                                                                            
-   [Project 5](/210/Project-5) - 
+   [Project 5](/210/Project-5) - Use strings and lists to evaluate arithmetic expressions given in postfix notation.                          
+   [Project 8](/210/Proect-8) - Implement several functions that perform computations on strings or collections usign recursion.              
+   
   
    
    
