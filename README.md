@@ -32,8 +32,9 @@ Work with the SOMD Communications Team on a variety of projects including event 
    [2F](/2F) - Reverse the single line input                                               
    [2I](/2I) - Determines the amount of time necessary to allocate and initiaialzie the memory for an array of integers.
 
-  Python Programming class
-
+ Python Programming class
+   [Project 1](/210/Project-1) - Draw a duck using Turtle Graphics                                                                            
+   [Project 5](/210/Project-5) - 
   
    
    
