@@ -11,20 +11,24 @@
   {% include head-custom.html %}
 </head>
 <body>
-  <header class="site-header">
-    <nav class="site-nav">
-      <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
-      <a href="{{ '/experience.html' | relative_url }}" class="nav-link">Experience</a>
-      <a href="{{ '/projects.html' | relative_url }}" class="nav-link">Projects</a>
-    </nav>
-  </header>
+  <div class="site-wrapper">
+    <aside class="site-sidebar">
+      <nav class="site-nav">
+        <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
+        <a href="{{ '/experience.html' | relative_url }}" class="nav-link">Experience</a>
+        <a href="{{ '/projects.html' | relative_url }}" class="nav-link">Projects</a>
+      </nav>
+    </aside>
 
-  <main class="site-main">
-    {{ content }}
-  </main>
+    <main class="site-main">
+      {{ content }}
+    </main>
+  </div>
 
   <footer class="site-footer">
-    <a href="https://github.com/{{ site.github.owner_name | default: 'EireannCoelho' }}" target="_blank" rel="noopener">View My GitHub Profile</a>
+    <a href="https://github.com/{{ site.github.owner_name | default: 'EireannCoelho' }}" target="_blank" rel="noopener">GitHub</a>
+    <span class="footer-divider">·</span>
+    <a href="https://www.linkedin.com/in/eireann-coelho/" target="_blank" rel="noopener">LinkedIn</a>
     <span class="footer-divider">·</span>
     <span>Hosted on GitHub Pages</span>
   </footer>

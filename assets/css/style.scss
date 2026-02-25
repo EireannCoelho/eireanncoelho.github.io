@@ -5,11 +5,12 @@
 
 $font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 $font-serif: "DM Serif Display", Georgia, serif;
-$color-bg: #0f0f0f;
-$color-text: #e8e8e8;
-$color-accent: #c9a227;
-$color-muted: #888;
-$color-card: #1a1a1a;
+$color-bg: #ffffff;
+$color-text: #2c3e50;
+$color-accent: #3498db;
+$color-accent-light: #e8f4fc;
+$color-muted: #5a6c7d;
+$color-card: #f8fbff;
 $radius: 12px;
 
 * {
@@ -27,22 +28,31 @@ body {
   flex-direction: column;
 }
 
-.site-header {
-  padding: 1.5rem 2rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+.site-wrapper {
+  flex: 1;
+  display: flex;
+  min-height: calc(100vh - 60px);
+}
+
+.site-sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  padding: 2rem 1.5rem;
+  background: $color-accent-light;
+  border-right: 1px solid rgba(52, 152, 219, 0.2);
 }
 
 .site-nav {
-  max-width: 720px;
-  margin: 0 auto;
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .nav-link {
   color: $color-muted;
   text-decoration: none;
   font-weight: 500;
+  padding: 0.5rem 0;
   transition: color 0.2s;
 }
 
@@ -59,11 +69,12 @@ body {
 }
 
 .site-footer {
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   text-align: center;
   color: $color-muted;
   font-size: 0.9rem;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid rgba(52, 152, 219, 0.2);
+  background: $color-accent-light;
 }
 
 .footer-divider {
@@ -109,7 +120,7 @@ a:hover {
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid rgba(201, 162, 39, 0.3);
+  border: 3px solid rgba(52, 152, 219, 0.4);
   flex-shrink: 0;
 }
 
@@ -129,7 +140,7 @@ a:hover {
 
 .post-list li {
   padding: 0.9rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(52, 152, 219, 0.15);
 }
 
 .post-list li:last-child {
@@ -158,7 +169,7 @@ a:hover {
   border-radius: $radius;
   padding: 1.5rem;
   margin-bottom: 1rem;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(52, 152, 219, 0.2);
 }
 
 .project-card h3 {
@@ -190,14 +201,27 @@ a:hover {
   font-size: 0.9rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+  .site-wrapper {
+    flex-direction: column;
+  }
+
+  .site-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(52, 152, 219, 0.2);
+    padding: 1rem 2rem;
+  }
+
+  .site-nav {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
   .about-section {
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
-  
-  .site-nav {
-    justify-content: center;
   }
 }
