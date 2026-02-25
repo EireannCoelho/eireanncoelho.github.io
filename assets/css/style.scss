@@ -229,9 +229,10 @@ a:hover {
   position: static !important;
 }
 
-/* Education page: custom layout */
+/* Education page: custom layout - header on top, then content below */
 .education-page {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   overflow: visible;
 }
@@ -242,9 +243,11 @@ body.education-page .site-main {
 
 .education-header {
   display: block;
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
-  overflow: hidden;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  flex-shrink: 0;
+  order: 1;
 }
 
 .education-header h1 {
@@ -264,8 +267,11 @@ body.education-page .site-main {
 
 .education-body {
   display: block;
+  width: 100%;
   margin: 0;
   padding: 0;
+  flex: 1;
+  order: 2;
 }
 
 .education-layout {

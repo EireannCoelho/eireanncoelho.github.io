@@ -26,18 +26,18 @@ title: Education
 
     <aside class="education-images">
       <!-- ADD YOUR PICTURES: Place image files in the assets/education/ folder, then update the src paths below -->
-      <!-- Example: if you add "campus.jpg", use: /assets/education/campus.jpg -->
+      <!-- Example: if you add "campus.jpg", use: /assets/education/campus.png -->
       <div class="education-image-slot">
-        <img src="{{ '/assets/education/photo1.jpg' | relative_url }}" alt="University photo 1">
+        <img src="{{ '/assets/education/photo1.png' | relative_url }}" alt="University photo 1">
       </div>
       <div class="education-image-slot">
-        <img src="{{ '/assets/education/photo2.jpg' | relative_url }}" alt="University photo 2">
+        <img src="{{ '/assets/education/photo2.png' | relative_url }}" alt="University photo 2">
       </div>
       <div class="education-image-slot">
-        <img src="{{ '/assets/education/photo3.jpg' | relative_url }}" alt="University photo 3">
+        <img src="{{ '/assets/education/photo3.png' | relative_url }}" alt="University photo 3">
       </div>
       <div class="education-image-slot">
-        <img src="{{ '/assets/education/photo4.jpg' | relative_url }}" alt="University photo 4">
+        <img src="{{ '/assets/education/photo4.png' | relative_url }}" alt="University photo 4">
       </div>
     </aside>
   </div>
