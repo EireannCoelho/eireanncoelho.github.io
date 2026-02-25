@@ -14,7 +14,8 @@ title: Education
     <div class="education-content">
       <!-- ADD YOUR TEXT BELOW: Replace the placeholder paragraphs with your story about your time at the university -->
       <article class="education-article">
-        <p>Add your first paragraph here. Write about your experience at the University of Oregon—your journey, memorable moments, what you've learned, or what makes your time there special.</p>
+        <p>My time at the University of Oregon wasn't just about earning my degree-it was about learning how to be successful in one aspect of your life when others are showing difficulties. Juggling struggles in my personal life, struggles with my mental health and learning to be an adult while trying to find something I was passionate about specializing in was at times, too much to handle. But, I never stopped trying to find a solution. While I was hit with many speed bumps I continued to push forward. I learned how to take accountability for my work, remain adaptable in the face of setbacks and leverage proactive problem-solving when navigating complex challenges. While I am thankful for the amazing technical skills I learned in class, these professional attributes are what I am proud to have cultivated.
+        </p>
 
         <p>Add your second paragraph here. You might talk about specific classes, professors, projects, or how your Computer Science major connects with your Dance and Multimedia minors.</p>
 
