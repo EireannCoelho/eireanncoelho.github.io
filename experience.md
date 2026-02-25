@@ -5,16 +5,6 @@ title: Experience
 
 # Experience
 
-## Education
-
-**Bachelor of Science in Computer Science**  
-University of Oregon  
-Minor in Multimedia · Minor in Dance
-
----
-
-## Work Experience
-
 ### Communications Student Assistant
 **Nov 2024 – Present · University of Oregon, Eugene OR**
 
