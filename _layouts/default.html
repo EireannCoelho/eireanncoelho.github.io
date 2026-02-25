@@ -19,22 +19,18 @@
         <a href="{{ '/education.html' | relative_url }}" class="nav-link">Education</a>
         <a href="{{ '/projects.html' | relative_url }}" class="nav-link">Projects</a>
       </nav>
+      <footer class="site-footer">
+        <a href="https://github.com/{{ site.github.owner_name | default: 'EireannCoelho' }}" target="_blank" rel="noopener">GitHub</a>
+        <span class="footer-divider">·</span>
+        <a href="https://www.linkedin.com/in/eireann-coelho/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="footer-divider">·</span>
+        <span>Hosted on GitHub Pages</span>
+      </footer>
     </aside>
 
     <main class="site-main">
       {{ content }}
     </main>
   </div>
-
-  <footer class="site-footer">
-    <div class="footer-spacer"></div>
-    <div class="footer-content">
-      <a href="https://github.com/{{ site.github.owner_name | default: 'EireannCoelho' }}" target="_blank" rel="noopener">GitHub</a>
-      <span class="footer-divider">·</span>
-      <a href="https://www.linkedin.com/in/eireann-coelho/" target="_blank" rel="noopener">LinkedIn</a>
-      <span class="footer-divider">·</span>
-      <span>Hosted on GitHub Pages</span>
-    </div>
-  </footer>
 </body>
 </html>

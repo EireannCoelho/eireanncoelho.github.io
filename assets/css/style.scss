@@ -40,6 +40,8 @@ body {
   padding: 2rem 1.5rem;
   background: $color-accent-light;
   border-right: 1px solid rgba(52, 152, 219, 0.2);
+  display: flex;
+  flex-direction: column;
 }
 
 .site-nav {
@@ -69,26 +71,12 @@ body {
 }
 
 .site-footer {
-  display: flex;
-  align-items: center;
+  margin-top: auto;
+  padding-top: 1.5rem;
   color: $color-muted;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   border-top: 1px solid rgba(52, 152, 219, 0.2);
-  background: $color-accent-light;
-}
-
-.footer-spacer {
-  width: 200px;
-  flex-shrink: 0;
-  padding: 0 1.5rem;
-}
-
-.footer-content {
-  flex: 1;
-  max-width: 720px;
-  padding: 1.5rem 2rem;
-  text-align: center;
-  margin: 0 auto;
+  line-height: 1.5;
 }
 
 .footer-divider {
@@ -239,14 +227,10 @@ a:hover {
     gap: 1.5rem;
   }
 
-  .footer-spacer {
-    width: 0;
-    padding: 0;
-  }
-
-  .footer-content {
-    width: 100%;
-    padding: 1.5rem 2rem;
+  .site-footer {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    text-align: center;
   }
 
   .about-section {
