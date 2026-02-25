@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   {% include head-custom.html %}
 </head>
-<body class="{% if page.url == '/experience.html' %}experience-page{% elsif page.url == '/education.html' %}education-page{% endif %}">
+<body class="{% if page.url == '/experience.html' or page.url == '/experience/' %}experience-page{% elsif page.url == '/education.html' or page.url == '/education/' %}education-page{% endif %}">
   <div class="site-wrapper">
     <aside class="site-sidebar">
       <nav class="site-nav">

@@ -229,30 +229,32 @@ a:hover {
   position: static !important;
 }
 
-/* Education page: custom layout - header on top, then content below */
-.education-page {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  overflow: visible;
-}
-
+/* Education page: header on top, paragraphs below, images on right */
 body.education-page .site-main {
   max-width: 960px;
+  display: block !important;
+}
+
+body.education-page .site-main > * {
+  display: block !important;
+  width: 100% !important;
+}
+
+.education-page {
+  display: block !important;
+  width: 100% !important;
 }
 
 .education-header {
-  display: block;
-  width: 100%;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  flex-shrink: 0;
-  order: 1;
+  display: block !important;
+  width: 100% !important;
+  margin-bottom: 2rem !important;
+  padding-bottom: 1.5rem !important;
 }
 
 .education-header h1 {
   margin: 0 0 1rem 0 !important;
-  display: block;
+  display: block !important;
 }
 
 .education-subtitle {
@@ -266,21 +268,19 @@ body.education-page .site-main {
 }
 
 .education-body {
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  flex: 1;
-  order: 2;
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .education-layout {
-  display: flex;
+  display: flex !important;
+  flex-direction: row !important;
   gap: 2.5rem;
   align-items: flex-start;
   margin-top: 0;
   padding-top: 0;
-  clear: both;
 }
 
 .education-content {
