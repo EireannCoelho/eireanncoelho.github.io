@@ -18,13 +18,16 @@
         <a href="{{ '/experience.html' | relative_url }}" class="nav-link">Experience</a>
         <a href="{{ '/education.html' | relative_url }}" class="nav-link">Education</a>
         <a href="{{ '/projects.html' | relative_url }}" class="nav-link">Projects</a>
+        <a href="{{ '/fun-stuff.html' | relative_url }}" class="nav-link">Fun Stuff</a>
+        <a href="{{ '/art.html' | relative_url }}" class="nav-link">Art</a>
       </nav>
       <footer class="site-footer">
-        <a href="https://github.com/{{ site.github.owner_name | default: 'EireannCoelho' }}" target="_blank" rel="noopener">GitHub</a>
-        <span class="footer-divider">·</span>
-        <a href="https://www.linkedin.com/in/eireann-coelho/" target="_blank" rel="noopener">LinkedIn</a>
-        <span class="footer-divider">·</span>
-        <span>Hosted on GitHub Pages</span>
+        <div class="footer-links">
+          <a href="https://github.com/{{ site.github.owner_name | default: 'EireannCoelho' }}" target="_blank" rel="noopener">GitHub</a>
+          <span class="footer-divider">·</span>
+          <a href="https://www.linkedin.com/in/eireann-coelho/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="footer-hosted">Hosted on GitHub Pages</div>
       </footer>
     </aside>
 
