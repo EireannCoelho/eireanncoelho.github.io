@@ -5,14 +5,12 @@ title: Education
 
 
 <div class="education-page">
-  <header class="education-header">
-    <h1>Education</h1>
-    <p class="education-subtitle">Bachelor of Science in Computer Science from the University of Oregon with minor in Dance and minor in Multimedia.</p>
-  </header>
-
-  <section class="education-body">
   <div class="education-layout">
     <div class="education-content">
+      <header class="education-header">
+        <h1>Education</h1>
+        <p class="education-subtitle">Bachelor of Science in Computer Science from the University of Oregon with minor in Dance and minor in Multimedia</p>
+      </header>
       <!-- ADD YOUR TEXT BELOW: Replace the placeholder paragraphs with your story about your time at the university -->
       <article class="education-article">
         <p>Add your first paragraph here. Write about your experience at the University of Oregon—your journey, memorable moments, what you've learned, or what makes your time there special.</p>
