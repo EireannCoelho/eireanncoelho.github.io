@@ -222,19 +222,30 @@ a:hover {
 }
 
 /* Education page: custom layout */
-.education-page .site-main {
+.education-page {
+  display: block;
+  width: 100%;
+}
+
+body.education-page .site-main {
   max-width: 960px;
 }
 
 .education-header {
+  display: block;
   margin-bottom: 2.5rem;
 }
 
+.education-header h1 {
+  margin: 0 0 0.75rem 0;
+  display: block;
+}
+
 .education-subtitle {
+  display: block;
   font-size: 1.1rem;
   color: $color-muted;
-  margin-top: 0.5rem;
-  margin-bottom: 0;
+  margin: 0;
   line-height: 1.6;
 }
 
@@ -242,20 +253,28 @@ a:hover {
   display: flex;
   gap: 2.5rem;
   align-items: flex-start;
+  margin-top: 2rem;
 }
 
 .education-content {
   flex: 1;
   min-width: 0;
+  display: block;
 }
 
 .education-article {
+  display: block;
   font-size: 1rem;
   line-height: 1.8;
+  padding: 1.5rem;
+  background: $color-card;
+  border-radius: $radius;
+  border: 1px solid rgba(52, 152, 219, 0.1);
 }
 
 .education-article p {
-  margin-bottom: 1.25rem;
+  display: block;
+  margin: 0 0 1.25rem 0;
 }
 
 .education-article p:last-child {
