@@ -9,6 +9,7 @@ title: Education
     <p class="education-subtitle">Bachelor of Science in Computer Science from the University of Oregon with minor in Dance and minor in Multimedia.</p>
   </header>
 
+  <section class="education-body">
   <div class="education-layout">
     <div class="education-content">
       <!-- ADD YOUR TEXT BELOW: Replace the placeholder paragraphs with your story about your time at the university -->
@@ -40,4 +41,5 @@ title: Education
       </div>
     </aside>
   </div>
+  </section>
 </div>

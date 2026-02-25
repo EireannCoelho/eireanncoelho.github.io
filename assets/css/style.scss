@@ -221,10 +221,19 @@ a:hover {
   font-size: 1.35rem;
 }
 
+/* Education page: custom layout - reset theme overrides */
+.education-page h1,
+.education-page .education-subtitle,
+.education-page .education-article p {
+  float: none !important;
+  position: static !important;
+}
+
 /* Education page: custom layout */
 .education-page {
   display: block;
   width: 100%;
+  overflow: visible;
 }
 
 body.education-page .site-main {
@@ -233,27 +242,39 @@ body.education-page .site-main {
 
 .education-header {
   display: block;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  overflow: hidden;
 }
 
 .education-header h1 {
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 1rem 0 !important;
   display: block;
 }
 
 .education-subtitle {
-  display: block;
+  display: block !important;
   font-size: 1.1rem;
   color: $color-muted;
-  margin: 0;
+  margin: 0 !important;
+  padding: 0;
   line-height: 1.6;
+  max-width: 100%;
+}
+
+.education-body {
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .education-layout {
   display: flex;
   gap: 2.5rem;
   align-items: flex-start;
-  margin-top: 2rem;
+  margin-top: 0;
+  padding-top: 0;
+  clear: both;
 }
 
 .education-content {
