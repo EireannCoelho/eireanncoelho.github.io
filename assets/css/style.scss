@@ -277,6 +277,8 @@ body.education-page .site-main > * {
   align-items: flex-start;
   margin-top: 0;
   padding-top: 0;
+  max-width: 800px;
+  width: 100%;
 }
 
 .education-content {
@@ -312,7 +314,8 @@ body.education-page .site-main > * {
 }
 
 .education-images {
-  width: 220px;
+  width: 200px;
+  min-width: 200px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -335,13 +338,15 @@ body.education-page .site-main > * {
   display: block;
 }
 
-@media (max-width: 800px) {
+/* Keep education layout (text left, images right) at all sizes - only stack on very small screens */
+@media (max-width: 550px) {
   .education-layout {
-    flex-direction: column;
+    flex-direction: column !important;
   }
 
   .education-images {
     width: 100%;
+    min-width: unset;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1rem;
