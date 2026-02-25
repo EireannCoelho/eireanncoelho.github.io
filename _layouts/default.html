@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% seo %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% include head-custom.html %}
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
+      <a href="{{ '/experience.html' | relative_url }}" class="nav-link">Experience</a>
+      <a href="{{ '/projects.html' | relative_url }}" class="nav-link">Projects</a>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <a href="https://github.com/{{ site.github.owner_name | default: 'EireannCoelho' }}" target="_blank" rel="noopener">View My GitHub Profile</a>
+    <span class="footer-divider">·</span>
+    <span>Hosted on GitHub Pages</span>
+  </footer>
+</body>
+</html>

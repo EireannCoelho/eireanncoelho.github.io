@@ -1,5 +1,5 @@
 title: Eireann Coelho
-logo: /profile-photo.png
-#description:
-show_download: true
+logo: /profile.png
+description: Computer Science student at the University of Oregon — software development, multimedia design, and dance
+show_download: false
 theme: jekyll-theme-minimal
