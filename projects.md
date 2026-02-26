@@ -8,6 +8,11 @@ title: Projects
 Projects from my GitHub. Check out my [GitHub profile](https://github.com/EireannCoelho) for more.
 
 <div class="project-card">
+  <h3>OSProfiler</h3>
+  <p>A program written in C that runs a user's program and monitors how it is performing. The program gives a user a detailed and translated report on the metrics of the program. The user can decide the metrics it wants monitored and can export the report to save on a local device.</p>
+</div>
+
+<div class="project-card">
   <h3><a href="https://mcc-scheduler.vercel.app/" target="_blank" rel="noopener">MCC Scheduler</a></h3>
   <p>A web-based aggregation platform designed to unify disparate student organization schedules. The system provides three main services: automated fetching and parsing of external Outlook ICS feeds, a responsive web interface for filtering and viewing consolidated events, and a custom ICS generation engine that serves dynamic, filtered calendar feeds to user devices.</p>
 </div>
