@@ -338,6 +338,63 @@ body.education-page .site-main > * {
   display: block;
 }
 
+/* Art page: description left, visual right */
+.art-piece {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.art-piece-description {
+  flex: 1;
+  min-width: 0;
+}
+
+.art-piece-description h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.art-piece-description p {
+  margin: 0;
+  color: $color-muted;
+  line-height: 1.7;
+}
+
+.art-piece-visual {
+  flex-shrink: 0;
+  width: 320px;
+  display: block;
+  border-radius: $radius;
+  overflow: hidden;
+  border: 1px solid rgba(52, 152, 219, 0.2);
+  transition: opacity 0.2s, box-shadow 0.2s;
+}
+
+.art-piece-visual:hover {
+  opacity: 0.9;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+.art-piece-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: middle;
+}
+
+@media (max-width: 700px) {
+  .art-piece {
+    flex-direction: column;
+  }
+
+  .art-piece-visual {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
 /* Keep education layout (text left, images right) at all sizes - only stack on very small screens */
 @media (max-width: 550px) {
   .education-layout {
