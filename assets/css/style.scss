@@ -372,9 +372,20 @@ body.education-page .site-main > * {
   transition: opacity 0.2s, box-shadow 0.2s;
 }
 
+button.art-piece-visual {
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
 .art-piece-visual:hover {
   opacity: 0.9;
   box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+.art-piece-lightbox:hover {
+  cursor: pointer;
 }
 
 .art-piece-visual img {
@@ -382,6 +393,61 @@ body.education-page .site-main > * {
   height: auto;
   display: block;
   vertical-align: middle;
+}
+
+/* Art lightbox / modal */
+.art-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.art-lightbox[hidden] {
+  display: none;
+}
+
+.art-lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.art-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.art-lightbox-content {
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.art-lightbox-content img {
+  max-width: 100%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  display: block;
+  border-radius: $radius;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 700px) {
