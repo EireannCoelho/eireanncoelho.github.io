@@ -1,4 +1,5 @@
 # Art page images
 
-Add your art piece images here. For example:
+Add your art piece images here:
 - `click.png` - used for the "Click!" stop motion piece
+- `dynamic.png` - used for the "Dynamic" Processing 4 piece

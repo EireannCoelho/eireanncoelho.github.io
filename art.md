@@ -16,3 +16,13 @@ title: Art
     <img src="{{ '/assets/art/click.png' | relative_url }}" alt="Click! - Stop motion piece by Eireann Coelho">
   </a>
 </div>
+
+<div class="art-piece">
+  <div class="art-piece-description">
+    <h2>Dynamic</h2>
+    <p>Created in Processing 4 By Eireann Coelho</p>
+  </div>
+  <a href="https://youtube.com/shorts/GiD1KZ-zUpg?feature=share" target="_blank" rel="noopener" class="art-piece-visual">
+    <img src="{{ '/assets/art/dynamic.png' | relative_url }}" alt="Dynamic - Processing 4 piece by Eireann Coelho">
+  </a>
+</div>
