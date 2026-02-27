@@ -41,7 +41,7 @@ title: Art
 
 <div class="art-piece">
   <div class="art-piece-description">
-    <h2>Words</h2>
+    <h2></h2>
     <p>Here is a collection of three words described visually through simple vectors. Created in Adobe Illustrator.</p>
   </div>
   <button type="button" class="art-piece-visual art-piece-lightbox" data-modal-src="{{ '/assets/art/words.png' | relative_url }}" aria-label="View Words larger">
