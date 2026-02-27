@@ -26,3 +26,13 @@ title: Art
     <img src="{{ '/assets/art/dynamic.png' | relative_url }}" alt="Dynamic - Processing 4 piece by Eireann Coelho">
   </a>
 </div>
+
+<div class="art-piece">
+  <div class="art-piece-description">
+    <h2>Stamp</h2>
+    <p>Created in Processing, this code takes an image and maps the intensity of the color of a pixel to the stamp shape. The darker the color, the more petals on the flower.</p>
+  </div>
+  <div class="art-piece-visual">
+    <img src="{{ '/assets/art/stamp.png' | relative_url }}" alt="Stamp by Eireann Coelho">
+  </div>
+</div>
