@@ -36,3 +36,13 @@ title: Art
     <img src="{{ '/assets/art/stamp.png' | relative_url }}" alt="Stamp by Eireann Coelho">
   </div>
 </div>
+
+<div class="art-piece">
+  <div class="art-piece-description">
+    <h2>Words</h2>
+    <p>Here is a collection of three words described visually through simple vectors. Created in Adobe Illustrator.</p>
+  </div>
+  <div class="art-piece-visual">
+    <img src="{{ '/assets/art/words.png' | relative_url }}" alt="Words - vector art by Eireann Coelho">
+  </div>
+</div>
