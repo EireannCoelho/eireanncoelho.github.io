@@ -9,7 +9,7 @@ Projects from my GitHub. Check out my [GitHub profile](https://github.com/Eirean
 
 <div class="project-card">
   <h3>OSProfiler</h3>
-  <p>A program written in C that runs a user's program and monitors how it is performing. The program gives a user a detailed and translated report on the metrics of the program. The user can decide the metrics it wants monitored and can export the report to save on a local device.</p>
+  <p>A program written in C that runs a user's program and monitors how it is performing. The program gives a user a detailed and translated report on the metrics of the program. The user can decide the metrics it wants monitored and the profiler will send those metrics to an llm to produce a descriptive report. This will help inexperienced developers find out where their programs are slowing down. Demo to come!</p>
 </div>
 
 <div class="project-card">
