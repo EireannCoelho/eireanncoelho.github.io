@@ -13,7 +13,7 @@ Projects from my GitHub. Check out my [GitHub profile](https://github.com/Eirean
 </div>
 
 <div class="project-card">
-  <h3><a href="https://mcc-scheduler.vercel.app/" target="_blank" rel="noopener">MCC Scheduler</a></h3>
+  <h3><a href="www.uomcc.org" target="_blank" rel="noopener">MCC Scheduler</a></h3>
   <p>A web-based aggregation platform designed to unify disparate student organization schedules. The system provides three main services: automated fetching and parsing of external Outlook ICS feeds, a responsive web interface for filtering and viewing consolidated events, and a custom ICS generation engine that serves dynamic, filtered calendar feeds to user devices.</p>
 </div>
 
